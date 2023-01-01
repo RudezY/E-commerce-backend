@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   // find all categories
   // be sure to include its associated Products
   try {
-    const categoryData = await Category.FindAll({
+    const categoryData = await Category.findAll({
       include: 
       [
         {
@@ -26,7 +26,10 @@ router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try { 
-    const categoryData = await Category.findByPK(req.params.id, {
+    const categoryData = await Category.findOne({
+      where: {
+        id: req.params.id,
+      },
       include: 
       [
         {
@@ -77,7 +80,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
-    const categoryData = await Category.Destroy({
+    const categoryData = await Category.destroy({
       where : {
         id: req.params.id
       }
