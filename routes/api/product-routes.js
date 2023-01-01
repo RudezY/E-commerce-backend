@@ -13,6 +13,9 @@ router.get('/', async (req, res) => {
       {
         model: Category
       },
+      {
+        model: Tag
+      },
 
   ]
     })
@@ -34,6 +37,9 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: Category,
+        },
+        {
+          model: Tag
         },
     ]
     });
