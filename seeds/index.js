@@ -20,9 +20,8 @@ const seedAll = async () => {
   await seedProductTags();
   console.log('\n----- PRODUCT TAGS SEEDED -----\n');
 
-  // process.exit(0);
+  process.exit(0);
 };
 
-seedAll();
+ seedAll();
 
-module.exports = seedAll;
